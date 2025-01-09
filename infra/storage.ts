@@ -1,2 +1,3 @@
-export const webApp = new sst.aws.StaticSite("WebApp", {
-})
+
+export const bucket = new sst.aws.Bucket("MyBucket");
+
