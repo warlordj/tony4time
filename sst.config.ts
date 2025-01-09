@@ -12,6 +12,13 @@ export default $config({
   async run() {
     await import("./infra/storage");
     await import("./infra/api");
-  
+ 
+	new sst.aws.StaticSite("MyWeb",{
+		path: "./packages/frontend",
+		indexPage: "index.html",
+		errorPage: "index.html",
+	});
+	
+
   },
 });
