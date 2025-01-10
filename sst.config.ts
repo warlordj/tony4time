@@ -17,6 +17,10 @@ export default $config({
 		path: "./packages/frontend",
 		indexPage: "index.html",
 		errorPage: "index.html",
+		build: {
+			output: "dist",
+			command: "npm run build",
+		},
 	});
 	
 
