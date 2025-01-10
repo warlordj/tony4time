@@ -20,7 +20,7 @@ export default $config({
 
     new sst.aws.Router("MyRouter", {
       routes: {
-        "/api/*": apiGateway.myApi.url,
+        "/*": apiGateway.myApi.url,
       }
     });
 
