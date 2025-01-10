@@ -14,7 +14,7 @@ export default $config({
     await import("./infra/api");
  
 	new sst.aws.StaticSite("MyWeb",{
-		path: "./packages/frontend",
+		path: "./packages/frontend/dist",
 		indexPage: "index.html",
 		errorPage: "index.html",
 	});
