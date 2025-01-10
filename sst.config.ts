@@ -10,14 +10,19 @@ export default $config({
     };
   },
   async run() {
-    await import("./infra/api");
- 
-	new sst.aws.StaticSite("MyWeb",{
-		path: "./packages/frontend/dist",
-		indexPage: "index.html",
-		errorPage: "index.html",
-	});
-	
+    const apiGateway = await import("./infra/api");
+
+    new sst.aws.StaticSite("MyWeb", {
+      path: "./packages/frontend/dist",
+      indexPage: "index.html",
+      errorPage: "index.html",
+    });
+
+    new sst.aws.Router("", {
+      routes: {
+        "/api/*": apiGateway.myApi.url,
+      }
+    });
 
   },
 });
