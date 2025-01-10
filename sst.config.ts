@@ -18,7 +18,7 @@ export default $config({
       errorPage: "index.html",
     });
 
-    new sst.aws.Router("", {
+    new sst.aws.Router("MyRouter", {
       routes: {
         "/api/*": apiGateway.myApi.url,
       }
